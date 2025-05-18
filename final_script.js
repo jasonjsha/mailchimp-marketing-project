@@ -95,7 +95,10 @@ function placeOrder() {
   let totalUnits = 0;
 
   cartItems.forEach(item => {
-    const price = parseFloat(item.case_price.replace('$', ''));
+    const price = typeof item.case_price === "string"
+  ? parseFloat(item.case_price.replace('$', ''))
+  : item.case_price;
+
     total += price * item.quantity;
     totalUnits += item.units_per_case * item.quantity;
   });
