@@ -1,3 +1,9 @@
+fetch('/api/trackVisit', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ page: 'home' })
+});
+
 const products = [
   {
     name: "NESCAFE COFFEE TRADITIONAL",
@@ -152,3 +158,9 @@ products.forEach(product => {
   `;
   grid.appendChild(div);
 });
+
+fetch('/api/products')
+  .then(res => res.json())
+  .then(data => {
+    console.log('Loaded products:', data);
+  });
