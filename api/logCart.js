@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const SUPABASE_URL = process.env.SUPABASE_URL;
     const SUPABASE_API_KEY = process.env.SUPABASE_API_KEY;
-    const { cart } = req.body;
+    const { cart_contents } = req.body;
 
     const response = await fetch(`${SUPABASE_URL}/rest/v1/visits`, {
       method: 'POST',
@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         page: 'cart_submission',
         timestamp: new Date().toISOString(),
-        cart_contents: JSON.stringify(cart)
+        cart_contents
       })
     });
 
