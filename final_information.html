@@ -1,13 +1,14 @@
 <html>
 <head>
-  <title>About Our Marketing Campaign</title>
+  <title>INST377 Information Page</title>
   <link rel="stylesheet" href="final_styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <div class="store-banner">
-    <img src="https://mcusercontent.com/db23652c9942cb55a106a3403/images/acc31f8c-fff9-a430-ae85-9797d794a488.png" alt="VeryBest Logo" class="banner-image" />
-  </div>
+<div class="store-banner">
+  <img src="https://mcusercontent.com/db23652c9942cb55a106a3403/images/acc31f8c-fff9-a430-ae85-9797d794a488.png" alt="VeryBest Logo" class="banner-image" />
+</div>
 
   <div class="info-container">
     <h1>How We Use Email Marketing To Better Serve You!</h1>
@@ -29,3 +30,32 @@
     <h2>How This Helps You</h2>
     <p>
       Using the insights gained from our flyers, we can tailor our promotions to better match your needs. You’ll see more relevant offers, better-curated product selections, and content that’s based on what you, the customer, show interest in. Our goal is to help make your ordering experience faster, easier, and more aligned with what your business is actually looking for.
+
+  <h2>Email Campaign Analytics</h2>
+  <canvas id="statsChart" width="400" height="200"></canvas>
+</div>
+
+<script>
+  const ctx = document.getElementById('statsChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Opens', 'Clicks', 'Purchases'],
+      datasets: [{
+        label: 'Campaign Stats',
+        //data inserted into graph will be placeholder graph as analytics cannot actually be sent out
+        data: [120, 50, 10],
+        backgroundColor: ['dodgerblue', 'orange', 'green']
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

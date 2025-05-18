@@ -38,6 +38,13 @@ function addToCart(product) {
     };
   }
   updateCart();
+
+  Toastify({
+    text: `${product.name} added to cart!`,
+    duration: 3000,
+    gravity: "top",
+    backgroundColor: "green"
+  }).showToast();
 }
 
 function removeFromCart(productName) {

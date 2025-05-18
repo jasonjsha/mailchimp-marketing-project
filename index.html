@@ -2,6 +2,8 @@
 <head>
   <title>INST 377 Final Project - Wholesale Store Page</title>
   <link rel="stylesheet" href="final_styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
 
@@ -11,20 +13,17 @@
   </a>
 </div>
 
+<div class="product-grid" id="product-grid">
+  <!-- JavaScript will insert products here -->
+</div>
 
-  <div class="product-grid" id="product-grid">
-    <!-- JavaScript will insert products -->
-  </div>
-
-  <div id="cart">
+<div id="cart">
   <h2>Your Cart</h2>
   <ul id="cart-items"></ul>
   <p id="cart-total">Total: $0.00 | Total Units: 0</p>
   <button class="btn" onclick="placeOrder()">Place Order</button>
 </div>
 
-  </div>
-
-  <script src="final_script.js"></script>
+<script src="final_script.js"></script>
 </body>
 </html>
