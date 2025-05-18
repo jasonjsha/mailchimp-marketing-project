@@ -95,30 +95,17 @@ function placeOrder() {
   let totalUnits = 0;
 
   cartItems.forEach(item => {
-    const price = typeof item.case_price === "string"
-  ? parseFloat(item.case_price.replace('$', ''))
-  : item.case_price;
-
+    const price = parseFloat(item.case_price.replace('$', ''));
     total += price * item.quantity;
     totalUnits += item.units_per_case * item.quantity;
   });
 
   //fetch 3
-const cartForLog = Object.values(cart).map(item => ({
-  name: item.name,
-  quantity: item.quantity,
-  unit_price: typeof item.case_price === "string"
-    ? parseFloat(item.case_price.replace('$', ''))
-    : item.case_price,
-  units_per_case: item.units_per_case
-}));
-
-fetch('/api/logCart', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ cart_contents: cartForLog })
-});
-
+  fetch('/api/logCart', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ cart })
+  });
 
   alert(`Thank you for your order!\nTotal Cost: $${total.toFixed(2)}\nTotal Units: ${totalUnits}`);
 
