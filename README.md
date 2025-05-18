@@ -73,7 +73,7 @@ The project does not include any automated testing. To test that the project is 
 1. Visit deployed webpage through Vercel to ensure that product grid loads as intended.
 2. Add items to cart (item should be added in cart at bottom, and notifications should appear)
 3. Click "Place Order" button and ensure that Supabase correctly records data in visits table.
-4. Check MailChimp Campaign to ensure that it correctly leads to webpage.
+4. Check MailChimp Campaign to ensure that it correctly leads to webpage.(For the sake of submission, an html file representing the email has been exported and added into the repository. This should be the starting point when testing the functionality of the project)
 
 ### API for Server Application
 
